@@ -80,28 +80,68 @@ section {
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    background: #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    padding: 2rem 9%;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .08);
+    padding: 2.5rem 9%;
+    transition: all .3s ease;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 1.5rem 9%;
+    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .12);
 }
 
 .header .logo {
     color: var(--main-color);
-    font-size: 2.3rem;
+    font-size: 2.4rem;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+.header.scrolled .logo {
+    font-size: 2.1rem;
 }
 
 .header .logo i {
     padding-left: .5rem;
+    transition: transform .3s ease;
+}
+
+.header .logo:hover i {
+    transform: rotate(15deg);
 }
 
 .header .navbar a {
-    margin: 0 1rem;
-    font-size: 1.7rem;
+    margin: 0 .5rem;
+    padding: .8rem 1.2rem;
+    font-size: 1.6rem;
     color: var(--main-color);
+    font-weight: 400;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.header .navbar a:hover {
+    color: #8B7355;
+    font-weight: 600;
+}
+
+.header .navbar a.active {
+    color: #8B7355;
+    font-weight: 700;
 }
 
 .header .btn {
     margin-top: 0;
+    transition: all .3s ease;
+}
+
+.header.scrolled .btn {
+    padding: .7rem 1.2rem;
+    font-size: 1.5rem;
 }
 
 #menu-btn {
@@ -730,7 +770,11 @@ section {
     }
 
     .header {
-        padding: 3rem;
+        padding: 2rem 3rem;
+    }
+
+    .header.scrolled {
+        padding: 1.5rem 3rem;
     }
 
     section {
@@ -794,6 +838,13 @@ section {
         right: 0;
         background: #fff;
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        border-radius: 0 0 var(--border-radius) var(--border-radius);
+    }
+
+    .header.scrolled .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
 
     .header .navbar.active {
@@ -802,9 +853,20 @@ section {
 
     .header .navbar a {
         display: block;
-        font-size: 2.2rem;
-        margin: 0;
-        padding: 1.5rem 2rem;
+        font-size: 2rem;
+        margin: .3rem 1rem;
+        padding: 1.2rem 2rem;
+        font-weight: 400;
+    }
+
+    .header .navbar a:hover {
+        color: #8B7355;
+        font-weight: 600;
+    }
+
+    .header .navbar a.active {
+        color: #8B7355;
+        font-weight: 700;
     }
 
     .home {

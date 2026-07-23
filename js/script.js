@@ -1,6 +1,7 @@
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
 let scrollTop = document.querySelector('#scroll-top');
+let header = document.querySelector('.header');
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
@@ -11,11 +12,39 @@ window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
 
+    // Scroll to top button
     if (window.scrollY > 300) {
         scrollTop.classList.add('active');
     } else {
         scrollTop.classList.remove('active');
     }
+
+    // Header scrolled state
+    if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+    } else {
+        header.classList.remove('scrolled');
+    }
+
+    // Active nav link based on scroll position
+    let sections = document.querySelectorAll('section');
+    let navLinks = document.querySelectorAll('.header .navbar a');
+
+    sections.forEach(section => {
+        let top = window.scrollY;
+        let offset = section.offsetTop - 200;
+        let id = section.getAttribute('id');
+        let height = section.offsetHeight;
+
+        if (top >= offset && top < offset + height) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + id) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
 };
 
 document.querySelectorAll('.image-slider img').forEach(images => {
