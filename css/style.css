@@ -6,6 +6,24 @@
     --border-radius-hover: 4% 95% 6% 95% / 95% 4% 92% 5%;
     --border: .2rem solid var(--main-color);
     --border-hover: .2rem dashed var(--main-color);
+    --bg-color: #fff;
+    --bg-dark: #faf9f7;
+    --text-color: var(--main-color);
+    --shadow-color: rgba(0, 0, 0, .1);
+    --header-bg: rgba(255, 255, 255, 0.95);
+    --header-bg-scrolled: rgba(255, 255, 255, 0.85);
+}
+
+[data-theme="dark"] {
+    --main-color: #D4A574;
+    --border: .2rem solid var(--main-color);
+    --border-hover: .2rem dashed var(--main-color);
+    --bg-color: #1A1A1A;
+    --bg-dark: #222222;
+    --text-color: #E8E0D5;
+    --shadow-color: rgba(0, 0, 0, .4);
+    --header-bg: rgba(26, 26, 26, 0.95);
+    --header-bg-scrolled: rgba(26, 26, 26, 0.88);
 }
 
 * {
@@ -18,6 +36,20 @@
     text-decoration: none;
     text-transform: capitalize;
     transition: all .2s linear;
+}
+
+html {
+    transition: background .3s ease, color .3s ease;
+}
+
+body {
+    background: var(--bg-color);
+    transition: background .3s ease;
+}
+
+::selection {
+    background: var(--main-color);
+    color: #fff;
 }
 
 html {
@@ -80,18 +112,18 @@ section {
     align-items: center;
     justify-content: space-between;
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .08);
+    background: var(--header-bg);
+    box-shadow: 0 .5rem 1.5rem var(--shadow-color);
     padding: 2.5rem 9%;
-    transition: all .3s ease;
+    transition: background .3s ease, padding .3s ease, box-shadow .3s ease;
 }
 
 .header.scrolled {
-    background: rgba(255, 255, 255, 0.85);
+    background: var(--header-bg-scrolled);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: 1.5rem 9%;
-    box-shadow: 0 .5rem 2rem rgba(0, 0, 0, .12);
+    box-shadow: 0 .5rem 2rem var(--shadow-color);
 }
 
 .header .logo {
@@ -142,6 +174,29 @@ section {
 .header.scrolled .btn {
     padding: .7rem 1.2rem;
     font-size: 1.5rem;
+}
+
+/* DARK MODE TOGGLE */
+
+.dark-mode-toggle {
+    font-size: 2rem;
+    color: var(--main-color);
+    cursor: pointer;
+    margin-right: .5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    transition: all .3s ease;
+    flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
 }
 
 #menu-btn {
@@ -736,6 +791,130 @@ section {
     color: #fff;
 }
 
+/* DARK MODE OVERRIDES */
+
+[data-theme="dark"] .about .row .content .icons-container .icons {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .menu .box-container .box {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .review .review-slider .box {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .review .review-slider .box .fa-quote-left,
+[data-theme="dark"] .review .review-slider .box .fa-quote-right {
+    color: rgba(255, 255, 255, .05);
+}
+
+[data-theme="dark"] .book form {
+    background: rgba(34, 34, 34, 0.6);
+}
+
+[data-theme="dark"] .book form .box {
+    background: rgba(26, 26, 26, 0.5);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .book form .box::placeholder {
+    color: rgba(232, 224, 213, 0.5);
+}
+
+[data-theme="dark"] .footer {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .scroll-top {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .location .bento-grid .bento-item {
+    background: var(--bg-dark);
+}
+
+[data-theme="dark"] .location .bento-grid .bento-item.photo .photo-overlay {
+    background: linear-gradient(transparent, rgba(26, 26, 26, 0.9));
+}
+
+[data-theme="dark"] .menu-tab {
+    color: var(--main-color);
+}
+
+[data-theme="dark"] .menu-tab:hover,
+[data-theme="dark"] .menu-tab.active {
+    background: var(--main-color);
+    color: #1A1A1A;
+}
+
+[data-theme="dark"] .swiper-pagination-bullet {
+    background: var(--main-color);
+}
+
+[data-theme="dark"] .footer .credit {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .footer .box-container .box a {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .heading span {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .home .row .content h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .home {
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
+}
+
+[data-theme="dark"] .menu {
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .book {
+    background-blend-mode: multiply;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="dark"] .about .row .content .title {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .about .row .content p {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .about .row .content .icons-container .icons h3 {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .menu .box-container .box .content h3,
+[data-theme="dark"] .menu .box-container .box .content p,
+[data-theme="dark"] .menu .box-container .box .content span {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .review .review-slider .box p,
+[data-theme="dark"] .review .review-slider .box h3,
+[data-theme="dark"] .review .review-slider .box span {
+    color: var(--text-color);
+}
+
+[data-theme="dark"] .location .bento-grid .bento-item p,
+[data-theme="dark"] .location .bento-grid .bento-item h3,
+[data-theme="dark"] .location .bento-grid .bento-item i {
+    color: var(--text-color);
+}
+
 
 
 
@@ -864,9 +1043,24 @@ section {
         font-weight: 600;
     }
 
+    .dark-mode-toggle {
+        margin-right: 0;
+        width: 4rem;
+        height: 4rem;
+        font-size: 1.8rem;
+    }
+
     .header .navbar a.active {
         color: #8B7355;
         font-weight: 700;
+    }
+
+    [data-theme="dark"] .header .navbar {
+        background: #222;
+    }
+
+    [data-theme="dark"] .header.scrolled .navbar {
+        background: rgba(34, 34, 34, 0.95);
     }
 
     .home {

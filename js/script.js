@@ -2,6 +2,36 @@ let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
 let scrollTop = document.querySelector('#scroll-top');
 let header = document.querySelector('.header');
+let darkToggle = document.querySelector('#dark-mode-toggle');
+
+// DARK MODE TOGGLE
+darkToggle.onclick = () => {
+    let html = document.querySelector('html');
+    let currentTheme = html.getAttribute('data-theme');
+    let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+
+    // Toggle icon
+    let icon = darkToggle.querySelector('i');
+    if (newTheme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+};
+
+// Load saved theme
+let savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    document.querySelector('html').setAttribute('data-theme', savedTheme);
+    let icon = darkToggle.querySelector('i');
+    if (savedTheme === 'dark') {
+        icon.className = 'fas fa-sun';
+    } else {
+        icon.className = 'fas fa-moon';
+    }
+}
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
