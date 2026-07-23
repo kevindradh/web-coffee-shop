@@ -1,5 +1,6 @@
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
+let scrollTop = document.querySelector('#scroll-top');
 
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
@@ -9,6 +10,12 @@ menu.onclick = () => {
 window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
+
+    if (window.scrollY > 300) {
+        scrollTop.classList.add('active');
+    } else {
+        scrollTop.classList.remove('active');
+    }
 };
 
 document.querySelectorAll('.image-slider img').forEach(images => {

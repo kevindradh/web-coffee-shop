@@ -658,6 +658,44 @@ section {
     border-bottom: var(--border-hover);
 }
 
+/* SCROLL TO TOP */
+
+.scroll-top {
+    position: fixed;
+    bottom: 4rem;
+    right: 3.5rem;
+    z-index: 999;
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    background: #fff;
+    color: var(--main-color);
+    font-size: 2rem;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(1rem);
+    transition: all .3s ease;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+.scroll-top.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+    background: var(--main-color);
+    color: #fff;
+}
+
 
 
 
