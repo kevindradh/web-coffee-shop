@@ -18,6 +18,25 @@ document.querySelectorAll('.image-slider img').forEach(images => {
     };
 });
 
+// MENU TABS
+let menuTabs = document.querySelectorAll('.menu-tab');
+let menuCategories = document.querySelectorAll('.menu-category');
+
+menuTabs.forEach(tab => {
+    tab.onclick = () => {
+        // Remove active class from all tabs and categories
+        menuTabs.forEach(t => t.classList.remove('active'));
+        menuCategories.forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        // Show corresponding category
+        let categoryId = 'category-' + tab.getAttribute('data-category');
+        document.getElementById(categoryId).classList.add('active');
+    };
+});
+
 var swiper = new Swiper(".review-slider", {
     spaceBetween: 20,
     pagination: {

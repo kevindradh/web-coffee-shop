@@ -94,60 +94,187 @@
     <section class="menu" id="menu">
         <h1 class="heading">our menu <span>popular menu</span></h1>
 
-        <div class="box-container">
-            <a href="#" class="box">
-                <img src="image/menu-1.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur, sed.</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+        <div class="menu-tabs">
+            <button class="menu-tab active" data-category="coffee">coffee</button>
+            <button class="menu-tab" data-category="dessert">dessert</button>
+            <button class="menu-tab" data-category="snacks">snacks</button>
+        </div>
 
-            <a href="#" class="box">
-                <img src="image/menu-2.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vel, fugit.</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+        <!-- COFFEE CATEGORY -->
+        <div class="menu-category active" id="category-coffee">
+            <div class="box-container">
+                <a href="#" class="box">
+                    <img src="image/menu-1.png" alt="">
+                    <div class="content">
+                        <h3>espresso</h3>
+                        <p>Rich and bold single-origin espresso shot</p>
+                        <span>$4.99</span>
+                    </div>
+                </a>
 
-            <a href="#" class="box">
-                <img src="image/menu-3.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, recusandae.</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+                <a href="#" class="box">
+                    <img src="image/menu-2.png" alt="">
+                    <div class="content">
+                        <h3>cappuccino</h3>
+                        <p>Smooth espresso with steamed milk foam</p>
+                        <span>$5.99</span>
+                    </div>
+                </a>
 
-            <a href="#" class="box">
-                <img src="image/menu-4.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quas.</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+                <a href="#" class="box">
+                    <img src="image/menu-3.png" alt="">
+                    <div class="content">
+                        <h3>latte macchiato</h3>
+                        <p>Layered espresso with creamy steamed milk</p>
+                        <span>$6.99</span>
+                    </div>
+                </a>
 
-            <a href="#" class="box">
-                <img src="image/menu-5.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, vitae.</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+                <a href="#" class="box">
+                    <img src="image/menu-4.png" alt="">
+                    <div class="content">
+                        <h3>cold brew</h3>
+                        <p>Slow-steeped 24-hour cold brew coffee</p>
+                        <span>$5.49</span>
+                    </div>
+                </a>
 
-            <a href="#" class="box">
-                <img src="image/menu-6.png" alt="">
-                <div class="content">
-                    <h3>our special coffee</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, expedita!</p>
-                    <span>$8.99</span>
-                </div>
-            </a>
+                <a href="#" class="box">
+                    <img src="image/menu-5.png" alt="">
+                    <div class="content">
+                        <h3>mocha</h3>
+                        <p>Rich chocolate blended with smooth espresso</p>
+                        <span>$6.49</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-6.png" alt="">
+                    <div class="content">
+                        <h3>americano</h3>
+                        <p>Bold espresso shots topped with hot water</p>
+                        <span>$4.49</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- DESSERT CATEGORY -->
+        <div class="menu-category" id="category-dessert">
+            <div class="box-container">
+                <a href="#" class="box">
+                    <img src="image/menu-3.png" alt="">
+                    <div class="content">
+                        <h3>tiramisu</h3>
+                        <p>Classic Italian coffee-flavored layered dessert</p>
+                        <span>$7.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-4.png" alt="">
+                    <div class="content">
+                        <h3>cheesecake</h3>
+                        <p>Creamy New York style cheesecake</p>
+                        <span>$8.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-5.png" alt="">
+                    <div class="content">
+                        <h3>chocolate lava</h3>
+                        <p>Warm chocolate cake with molten center</p>
+                        <span>$9.49</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-6.png" alt="">
+                    <div class="content">
+                        <h3>croissant</h3>
+                        <p>Buttery flaky French croissant</p>
+                        <span>$5.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-1.png" alt="">
+                    <div class="content">
+                        <h3>macarons</h3>
+                        <p>Assorted French macarons (3 pcs)</p>
+                        <span>$6.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-2.png" alt="">
+                    <div class="content">
+                        <h3>cinnamon roll</h3>
+                        <p>Soft baked roll with cinnamon glaze</p>
+                        <span>$5.49</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- SNACKS CATEGORY -->
+        <div class="menu-category" id="category-snacks">
+            <div class="box-container">
+                <a href="#" class="box">
+                    <img src="image/menu-2.png" alt="">
+                    <div class="content">
+                        <h3>sandwich</h3>
+                        <p>Grilled sandwich with premium fillings</p>
+                        <span>$7.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-3.png" alt="">
+                    <div class="content">
+                        <h3>avocado toast</h3>
+                        <p>Smashed avocado on sourdough bread</p>
+                        <span>$8.49</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-4.png" alt="">
+                    <div class="content">
+                        <h3>chicken wrap</h3>
+                        <p>Grilled chicken wrap with fresh veggies</p>
+                        <span>$7.49</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-5.png" alt="">
+                    <div class="content">
+                        <h3>salad bowl</h3>
+                        <p>Fresh garden salad with seasonal toppings</p>
+                        <span>$6.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-6.png" alt="">
+                    <div class="content">
+                        <h3>french fries</h3>
+                        <p>Crispy golden french fries with dip</p>
+                        <span>$4.99</span>
+                    </div>
+                </a>
+
+                <a href="#" class="box">
+                    <img src="image/menu-1.png" alt="">
+                    <div class="content">
+                        <h3>nachos</h3>
+                        <p>Crispy tortilla chips with cheese sauce</p>
+                        <span>$6.49</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </section>
 
