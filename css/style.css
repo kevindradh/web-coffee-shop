@@ -487,6 +487,138 @@ section {
     resize: none;
 }
 
+/* LOCATION */
+
+.location {
+    padding-bottom: 5rem;
+}
+
+.location .bento-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 2rem;
+    max-width: 100rem;
+    margin: 0 auto;
+}
+
+.location .bento-grid .bento-item {
+    border: var(--border);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s ease;
+}
+
+.location .bento-grid .bento-item:hover {
+    border: var(--border-hover);
+    border-radius: var(--border-radius-hover);
+}
+
+.location .bento-grid .bento-item i {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.location .bento-grid .bento-item h3 {
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-bottom: .8rem;
+}
+
+.location .bento-grid .bento-item p {
+    font-size: 1.5rem;
+    color: var(--main-color);
+    line-height: 1.8;
+}
+
+.location .bento-grid .bento-item p .time {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+/* Map - spans 2 rows and 2 columns */
+.location .bento-grid .bento-item.map {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+    padding: 0;
+    border: var(--border);
+    min-height: 35rem;
+    transition: none;
+    cursor: default;
+}
+
+.location .bento-grid .bento-item.map:hover {
+    border: var(--border);
+    border-radius: var(--border-radius);
+}
+
+.location .bento-grid .bento-item.map iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 35rem;
+    border-radius: inherit;
+}
+
+/* Address card */
+.location .bento-grid .bento-item.address {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+}
+
+/* Hours card */
+.location .bento-grid .bento-item.hours {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+/* Contact card */
+.location .bento-grid .bento-item.contact {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+/* Photo card */
+.location .bento-grid .bento-item.photo {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+    padding: 0;
+    border: var(--border);
+    min-height: 20rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.location .bento-grid .bento-item.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.location .bento-grid .bento-item.photo .photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(68, 68, 51, 0.85));
+    padding: 2rem;
+    text-align: center;
+    z-index: 1;
+}
+
+.location .bento-grid .bento-item.photo .photo-overlay span {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+}
+
 .footer .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
@@ -568,6 +700,38 @@ section {
     }
 }
 
+@media (max-width: 991px) {
+    .location .bento-grid {
+        grid-template-columns: 1fr 1fr;
+        max-width: 70rem;
+    }
+
+    .location .bento-grid .bento-item.map {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .location .bento-grid .bento-item.address {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+    }
+
+    .location .bento-grid .bento-item.hours {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .location .bento-grid .bento-item.contact {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .location .bento-grid .bento-item.photo {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+}
+
 @media (max-width: 768px) {
     .heading {
         font-size: 6rem;
@@ -643,5 +807,41 @@ section {
     .home .row .image img {
         height: auto;
         width: 100%;
+    }
+
+    .location .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .location .bento-grid .bento-item.map {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        min-height: 25rem;
+    }
+
+    .location .bento-grid .bento-item.map iframe {
+        min-height: 25rem;
+    }
+
+    .location .bento-grid .bento-item.address {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    .location .bento-grid .bento-item.hours {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    .location .bento-grid .bento-item.contact {
+        grid-column: 1 / 2;
+        grid-row: auto;
+    }
+
+    .location .bento-grid .bento-item.photo {
+        grid-column: 1 / 2;
+        grid-row: auto;
+        min-height: 15rem;
     }
 }
